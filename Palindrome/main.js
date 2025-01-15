@@ -9,14 +9,14 @@ let parola = prompt("Scrivi qui una parola (non preoccuparti delle maiuscole) ",
 // non serve in realtà, anzi basta invocare la funzione al suo posto per accorgersene effettivamente
 
 function revString(parola) {
-    return parola.split("").reverse().join("").trim(); //.toLowerCase();
+    return parola.split("").reverse().join("").trim().toLowerCase();
     //? ragionamento concatenazione=> 
     //? creoArray.split("vuoto")-invertoOrdine.reverse()-tornoStringa.join("vuoto")-taglioEsterni.trim()-riduco.toLowerCase()
 }
 console.log(revString(parola));
 console.log(parola)
 
-if (ToLow(parola) === ToLow(revString(parola))) {
+if (parola.toLowerCase() === revString(parola)) {
     console.log(`la parola ${parola} è un palindromo`)
 } else {
     console.log(`la parola ${parola} NON è un palindromo`)
@@ -30,18 +30,16 @@ function revString1() {
     for (let i = parola1.length - 1; i >= 0; i--) {
         parolaInversa1 += parola1.charAt(i);
     }
-    return parolaInversa1;
+    return parolaInversa1.toLowerCase();
 }
-console.log(ToLow(revString1()));
+console.log(revString1());
 //? qui devo invocare revstring1() per forza, perchè se richiamo parolaInversa1 avrò ""...PERCHè?!!!
-console.log(ToLow(parola1))
+console.log(parola1)
 
-function ToLow() {
-    return parola.toLowerCase();
-}
 
-//? ToLow(parolaInversa1) qui funziona, nel console.log di riga 35 ho dovuto invocare (revString1()) PERCHè?!
-if (ToLow(parola1) === ToLow(parolaInversa1)) {
+
+//? nel console.log di riga 35 ho dovuto invocare (revString1()) PERCHè?!
+if (parola1.toLowerCase() === parolaInversa1.toLowerCase()) {
     console.log(`la parola ${parola1} è un palindromo`)
 } else {
     console.log(`la parola ${parola1} NON è un palindromo`)
