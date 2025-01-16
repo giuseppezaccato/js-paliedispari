@@ -4,7 +4,7 @@
 
 
 //* 1.1 concatenazione di metodi (methods.concat)
-let parola = prompt("Scrivi qui una parola (non preoccuparti delle maiuscole) ", "iTopiNonAvevanoNipoti");
+let parola = prompt("Scrivi qui una parola (non preoccuparti delle maiuscole) ", "iTopiNonAvevanoNipoti").toLowerCase();
 // ? let parolaInversa = revString(parola); 
 // non serve in realtà, anzi basta invocare la funzione al suo posto per accorgersene effettivamente
 
@@ -16,14 +16,14 @@ function revString(parola) {
 console.log(revString(parola));
 console.log(parola)
 
-if (parola.toLowerCase() === revString(parola)) {
+if (parola === revString(parola)) {
     console.log(`la parola ${parola} è un palindromo`)
 } else {
     console.log(`la parola ${parola} NON è un palindromo`)
 }
 
 //* 1.2 metodo con ciclo FOR
-let parola1 = prompt("scrivimi qui una parola e ti dirò se è palindroma(non preoccuparti delle maiuscole)", "SaippuaKivikauppias")
+let parola1 = prompt("scrivimi qui una parola e ti dirò se è palindroma(non preoccuparti delle maiuscole)", "SaippuaKivikauppias").toLowerCase();
 let parolaInversa1 = "";
 
 function revString1() {

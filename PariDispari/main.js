@@ -16,13 +16,13 @@ let PcNumber = "";
 play = (prompt("scegli pari o dispari", "Pari").toLowerCase());
 
 if (play == "pari") {
-    play = true;
+    play = "pari";
     console.log(`l'utente ha scelto pari`, play);
 } else if (play == "dispari") {
-    play = false;
+    play = "dispari";
     console.log(`l'utente ha scelto Dispari`, play);
 } else {
-    alert(`attenzione devi scegliere un numero tra 1 e 5!!!`)
+    alert(`attenzione devi scegliere un numero Pari oppure Dispari`)
 }
 
 //* scelta PlayerNumber!!
@@ -48,27 +48,28 @@ function result() {
 
 // funzione ElseOdd PariDispari
 function ElseOdd() {
-    if (sum % 2 == 0) {
-        return console.log(`la somma è`, result(sum), `quindi Pari!`);
+    if (result() % 2 === 0) {
+        return console.log(`la somma è`, result(), `quindi Pari!`);
     } else {
-        return console.log(`la somma è`, result(sum), `quindi Dispari!`);
+        return console.log(`la somma è`, result(), `quindi Dispari!`);
     }
-    //! problema definizione numero pari o dispari!!!
-}
-// console.log(ElseOdd()); //? undefined
 
-// controllo VINCITORE
+}
+//! console.log(ElseOdd()); 
+// //? undefined =>perchè elseOdd() nella sua invocazione ha gia DENTRO il console.log(), quindi basta l'invocazione semplicemente!!
+ElseOdd(); //*solo invocazione!
+let PariDispari = () => (result() % 2 == 0) ? ("pari") : ("dispari");
+//* nuova funzione in arrow function con applicazione IF ternario!
+
+//! controllo VINCITORE (confronto stringhe!)
 let winner = "";
-if (play && ElseOdd()) {
-    winner = "player";
+if (play == PariDispari()) {
+    winner = "PLAYER";
     console.log(`${winner} VINCE!`);
-} else if (!play && !ElseOdd()) {
-    winner = "computer"
-    console.log(`${winner} VINCE!!`)
 } else {
-    console.log(`STAVOLTA ABBIAMO PAREGGIATO!`)
+    winner = "COMPUTER"
+    console.log(`${winner} VINCE!!`)
 }
-
 
 
 
