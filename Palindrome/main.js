@@ -10,7 +10,7 @@ let parola = prompt("Scrivi qui una parola (non preoccuparti delle maiuscole) ",
 
 function revString(parola) {
     return parola.split("").reverse().join("").trim().toLowerCase();
-    //? ragionamento concatenazione=> 
+    //todo  ragionamento concatenazione=> 
     //? creoArray.split("vuoto")-invertoOrdine.reverse()-tornoStringa.join("vuoto")-taglioEsterni.trim()-riduco.toLowerCase()
 }
 console.log(revString(parola));
